@@ -16,28 +16,28 @@
     <!-- Navigation-section -->
     <nav class="navbar fixed-bottom navbar-light bg-light d-flex justify-content-center">
         <nav aria-label="Posts navigation example">
-            <ul class="pagination pagination-sm">
-                <li class="page-item">
+            <ul class="pagination pagination-sm ">
+                <li class="page-item" id="home-nav">
                     <a class="page-link" href="#home">
                         <i class="fa fa-home"></i>
                     </a>
                 </li>
-                <li class="page-item">
+                <li class="page-item" id="cv-nav">
                     <a class="page-link" href="#cv">
                         <i class="fa fa-paperclip"></i>
                     </a>
                 </li>
-                <li class="page-item">
+                <li class="page-item" id="playlist-nav">
                     <a class="page-link" href="#playlist">
                         <i class="fa fa-soundcloud"></i>
                     </a>
                 </li>
-                <li class="page-item">
+                <li class="page-item" id="game-nav">
                     <a class="page-link" href="#game">
                         <i class="fa fa-gamepad"></i>
                     </a>
                 </li>
-                <li class="page-item">
+                <li class="page-item" id="contact-nav">
                     <a class="page-link" href="#contact">
                         <i class="fa fa-address-card"></i>
                     </a>
@@ -901,6 +901,38 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="assets/js/neumorphism.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/onscreen/dist/on-screen.umd.min.js"></script>
+    <script type="text/javascript">
+        function removeClasses() {
+            var tags_id_list = ["#home-nav", "#cv-nav", "#playlist-nav", "#game-nav", "#contact-nav"]
+            tags_id_list.forEach(
+                function (item, index) {
+                    $(item).removeClass("active");
+                }
+            );
+        }
+        var os = new OnScreen();
+        os.on('enter', '#home', (element, event) => {
+            removeClasses();
+            $("#home-nav").addClass("active");
+        });
+        os.on('enter', '#cv', (element, event) => {
+            removeClasses();
+            $("#cv-nav").addClass("active");
+        });
+        os.on('enter', '#playlist', (element, event) => {
+            removeClasses();
+            $("#playlist-nav").addClass("active");
+        });
+        os.on('enter', '#game', (element, event) => {
+            removeClasses();
+            $("#game-nav").addClass("active");
+        });
+        os.on('enter', '#contact', (element, event) => {
+            removeClasses();
+            $("#contact-nav").addClass("active");
+        });
+    </script>
     <!-- scripts-section-end -->
 </body>
 
