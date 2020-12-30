@@ -11,3 +11,13 @@ html{
 .icon-size{
     width: 50px;
 }
+i.fa.fa-heart{
+    transition: color 2s;
+    color: #e69d9e;
+
+}
+i.fa.fa-heart:hover{
+    transition: color 2s;
+    color: #c6a8e3;
+
+}
